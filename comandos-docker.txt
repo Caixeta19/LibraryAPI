@@ -1,0 +1,11 @@
+//Rodar container Postgre na versão 16.3
+docker run --name librarydb -p 5432:5432 -e POSTGRES_PASSWORD=postgres -e POSTGRES_USER=postgres -e POSTGRES_DB=library postgres:16
+
+// Rodar PgAdmin4
+docker run --name pgadmin4 -p 15432:80 -e PGADMIN_DEFAULT_EMAIL=admin@admin.com -e PGADMIN_DEFAULT_PASSWORD=admin --network library-network dpage/pgadmin4:8.9
+
+// Criar Network
+docker network create library-network
+
+
+
