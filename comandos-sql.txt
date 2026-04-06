@@ -2,7 +2,7 @@ Create table Autor(
    id uuid not null primary key,
    name varchar(100) not null,
    data_nascimento date not null,
-  nacionalidade varchar(50) not null
+   nacionalidade varchar(50) not null
 );
 
 Create table Livro(
