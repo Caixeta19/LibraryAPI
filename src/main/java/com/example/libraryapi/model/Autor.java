@@ -2,6 +2,8 @@ package com.example.libraryapi.model;
 
 import jakarta.persistence.*;
 import lombok.Data;
+import lombok.ToString;
+
 import java.time.LocalDate;
 import java.util.List;
 import java.util.UUID;
@@ -9,6 +11,7 @@ import java.util.UUID;
 @Data
 @Entity
 @Table(name= "Autor")
+@ToString
 public class Autor {
 
     @Id
@@ -25,6 +28,7 @@ public class Autor {
     @Column(name="nacionalidade",length = 100,nullable = false)
     private String nacionalidade;
 
-    @OneToMany(mappedBy = "autor")
+    //@OneToMany(mappedBy = "autor")
+    @Transient
     private List<Livro> livros;
 }
